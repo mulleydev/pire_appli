@@ -3,8 +3,8 @@ const cacheName = "Worst PWA !";
 const fileToCache = [
 	'/',
 	'/index.html',
-	'/src',
-	'/dist'
+	'/bundle.min.js',
+	'/images',
 ];
 
 self.addEventListener('install', (e) => {
