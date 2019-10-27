@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta charset="UTF-8" />
+        <meta charset="UTF-8"/>
         <title>Worst PWA ?</title>
-    		<link rel="manifest" href="./manifest.json">
+        <link rel="manifest" href="./manifest.json">
     </head>
-    <body>
-        <button id="bouton">Clique</button>
-			<script>
-			if('serviceWorker' in navigator) {
-				navigator.serviceWorker.register('./sw.js')
-				.then(function() {
-				    console.log('Service Worker Registered');
-				});
-			}
-			</script>
+<body>
+
+	<button id="bouton" onclick="playAudio('song/gameover.mp3')">Clique</button>
+
+<script>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js').then(function () {
+	    console.log('Service Worker Registered');
+    });
+}
+</script>
+
+<script>
+    // module audio
+function playAudio(url) {
+    var a = new Audio(url);
+    a.play();
+	console.log("Module audio cliqué !");
+}
+</script>
+
     </body>
 </html>
